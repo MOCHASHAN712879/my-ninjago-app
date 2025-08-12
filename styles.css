@@ -1,0 +1,320 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: #ffd700;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-brand h1 {
+    color: #ffd700;
+    font-size: 24px;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.btn-red { background: #ff4444; }
+.btn-blue { background: #4444ff; }
+.btn-green { background: #44ff44; }
+.btn-golden { background: #ffd700; color: black; }
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 48px;
+    color: #ffd700;
+    text-shadow: 0 0 20px #ffd700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Main Content */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Character Grid */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.character-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.character-card:hover {
+    border-color: #ffd700;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--element-color);
+}
+
+.character-card h3 {
+    font-size: 24px;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.character-card .element {
+    color: var(--element-color);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.character-card .weapon {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.character-card .power-level {
+    background: rgba(255, 215, 0, 0.2);
+    border: 1px solid #ffd700;
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Quests Section */
+.quests-section {
+    width: 100%;
+}
+
+.quests-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.quests-header h2 {
+    font-size: 36px;
+    color: #ffd700;
+    text-shadow: 0 0 15px #ffd700;
+}
+
+.quests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.quest-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #333;
+    border-left: 4px solid var(--element-color);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.quest-card:hover {
+    border-color: #ffd700;
+    border-left-color: var(--element-color);
+}
+
+.quest-title {
+    color: #ffd700;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.quest-description {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.quest-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+}
+
+.quest-difficulty {
+    padding: 3px 8px;
+    border: 1px solid;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.difficulty-easy { color: #4ade80; border-color: #4ade80; }
+.difficulty-medium { color: #fbbf24; border-color: #fbbf24; }
+.difficulty-hard { color: #fb7185; border-color: #fb7185; }
+.difficulty-legendary { color: #a855f7; border-color: #a855f7; }
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 2px solid #ffd700;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #ffd700;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Element Colors */
+.fire { --element-color: #ff4444; }
+.water { --element-color: #44aaff; }
+.earth { --element-color: #8b4513; }
+.lightning { --element-color: #4444ff; }
+.ice { --element-color: #87ceeb; }
+.energy { --element-color: #44ff44; }
+.creation { --element-color: #ffd700; }
+.destruction { --element-color: #800080; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quests-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
